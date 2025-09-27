@@ -1,0 +1,8 @@
+type: GenericCrafter
+name: "Uncrystallized Soul Collecting"
+health: 1
+hasItems: false
+research: {
+	parent: special-tech
+	alwaysUnlocked: true
+}

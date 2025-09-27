@@ -1,0 +1,12 @@
+type: GenericCrafter
+name: "Nucleus Soul Collecting"
+health: 1
+hasItems: false
+research: {
+	parent: crystallized-soul-collecting
+	requirements: [
+		uncrystallized-soul/6250
+		crystallizing-soul/250
+		crystallized-soul/10
+	]
+}

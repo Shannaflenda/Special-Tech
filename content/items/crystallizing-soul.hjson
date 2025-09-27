@@ -1,0 +1,8 @@
+name: "Crystallizing Soul"
+color: 000000
+hardness: 1
+cost: 1
+research: {
+	parent: uncrystallized-soul
+	alwaysUnlocked: true
+}

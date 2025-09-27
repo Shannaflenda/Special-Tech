@@ -1,0 +1,8 @@
+name: "Nucleus Soul"
+color: 000000
+hardness: 1
+cost: 1
+research: {
+	parent: crystallized-soul
+	alwaysUnlocked: true
+}

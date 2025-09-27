@@ -1,0 +1,11 @@
+type: GenericCrafter
+name: "Crystallized Soul Collecting"
+health: 1
+hasItems: false
+research: {
+	parent: crystallizing-soul-collecting
+	requirements: [
+		uncrystallized-soul/2500
+		crystallizing-soul/100
+	]
+}
