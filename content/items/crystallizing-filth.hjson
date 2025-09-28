@@ -1,0 +1,8 @@
+name: "Crystallizing Filth"
+color: 000000
+hardness: 1
+cost: 1
+research: {
+	parent: uncrystallized-filth
+	alwaysUnlocked: true
+}

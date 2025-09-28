@@ -1,0 +1,8 @@
+name: "Nucleus Filth"
+color: 000000
+hardness: 1
+cost: 1
+research: {
+	parent: crystallized-filth
+	alwaysUnlocked: true
+}

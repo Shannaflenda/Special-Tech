@@ -1,0 +1,8 @@
+name: "Uncrystallized Filth"
+color: 000000
+hardness: 1
+cost: 1
+research: {
+	parent: special-tech
+	alwaysUnlocked: true
+}

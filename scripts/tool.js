@@ -32,6 +32,37 @@ function addItem(team, item, amount) {
 	core.items.add(item, Math.min(amount, core.storageCapacity - core.items.get(item)));
 }
 
+function addSec(sector, item, offset, addTimes) {
+	
+	const planet = sector.planet;
+	const name = sector.name();
+	
+	var threat = sector.threat * 10;
+	
+	var capturedTimes = Core.settings.getInt(planet + name + "-capturedTimes", 0);
+	
+	var adif = {
+	}
+	
+	var fdif = threat - offset + (adif[sector.name()] != null ? adif[sector.name()] : 0);
+	
+	if (fdif < 1) return;
+	
+	var k = 0;
+	
+	if (fdif > 9) {
+		k = 0.03;
+	} else if (fdif > 3) {
+		k = 0.5 - 0.05 * fdif;
+	} else {
+		k = 0.7 - 0.1 * fdif;
+	}
+	
+	addItem(Vars.player.team(), item, Math.round(fdif + 2 * fdif * Math.exp(- k * capturedTimes)));
+	
+	if (addTimes) Core.settings.put(planet + name + "-capturedTimes", capturedTimes + 1);
+}
+
 
 
 module.exports = {
@@ -40,4 +71,5 @@ module.exports = {
 	getUnitRealHealth: getUnitRealHealth,
 	setToast: setToast,
 	addItem: addItem,
+	addSec: addSec,
 };
