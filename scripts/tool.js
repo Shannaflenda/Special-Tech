@@ -39,7 +39,7 @@ function addSec(sector, item, offset, addTimes) {
 	
 	var threat = sector.threat * 10;
 	
-	var capturedTimes = Core.settings.getInt(planet + "-" + name + "-capturedTimes", 0);
+	var capturedTimes = parseInt(Core.settings.getString(planet + "-" + name + "-capturedTimes", "0"));
 	
 	var adif = {
 	}
@@ -60,7 +60,7 @@ function addSec(sector, item, offset, addTimes) {
 	
 	addItem(Vars.player.team(), item, Math.round(fdif + 2 * fdif * Math.exp(- k * capturedTimes)));
 	
-	if (addTimes) Core.settings.put(planet + "-" + name + "-capturedTimes", capturedTimes + 1);
+	if (addTimes) Core.settings.put(planet + "-" + name + "-capturedTimes", (capturedTimes + 1).toString());
 }
 
 
