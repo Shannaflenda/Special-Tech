@@ -35,6 +35,7 @@ Events.on(UnitDestroyEvent, e => {
 Events.on(SectorCaptureEvent, e => {
 	
 	const sector = e.sector;
+	if (e.initialCapture) Core.settings.put(sector.planet + "-" + sector.name() + "-capturedTimes", 0);
 	
 	tool.addSec(sector, Vars.content.item("nsst-uncrystallized-filth"), 0, false);
 	tool.addSec(sector, Vars.content.item("nsst-crystallizing-filth"), 3, false);
