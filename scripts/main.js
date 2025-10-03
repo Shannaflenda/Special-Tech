@@ -3,7 +3,7 @@ const tool = require("nsst/tool");
 Events.on(UnitDestroyEvent, e => {
 	
 	const unit = e.unit;
-	if (Vars.state.rules.pvp || unit.team == Vars.player.team() || unit.controller() == MissileAI) return;
+	if (Vars.state.rules.pvp || unit.team == Vars.player.team() || unit.controller() instanceof MissileAI) return;
 	
 	const maxHealth = tool.getUnitRealMaxHealth(unit, false);
 	
